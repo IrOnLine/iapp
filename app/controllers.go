@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/ironline/iapp/api/models"
+	"github.com/ironline/iapp/app/models"
 )
 
 // CreateUser creates a new user

@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/ironline/iapp/api/routes"
+	"github.com/ironline/iapp/app/routes"
 )
 
 func main() {
