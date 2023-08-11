@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/johndoe/api/models"
+	"github.com/gorilla/mux"
+	"github.com/ironline/iapp/api/models"
 )
 
 // CreateUser creates a new user
