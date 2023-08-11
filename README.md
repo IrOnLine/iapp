@@ -1,4 +1,5 @@
 Here are detailed instructions to set up and run the application:
+(created by claude.ai)
 
 Setting up
 Clone the repository:
