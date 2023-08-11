@@ -1,0 +1,52 @@
+version: "3" 
+
+# Define the services/containers to run
+services:
+
+  # The reverse proxy container
+  proxy:
+    image: nginx:alpine # Use nginx alpine image
+    ports:
+      - "80:80" # Expose port 80 to host
+    volumes:
+      - ./nginx:/etc/nginx/conf.d # Mount nginx config
+      - ./certs:/etc/nginx/certs # Mount SSL certificates
+
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  # The API application container 
+  api:
+    build: ./api # Build from the Dockerfile in ./api
+    env_file:
+      - ./api/.env # Environment variables file
+    depends_on:
+      - db # Wait for db to be ready
+    # Logging  
+    logging:
+      driver: "json-file" 
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  # The MySQL database container
+  db:
+    image: mysql:5.7 # Use MySQL 5.7 image
+    env_file: 
+      - ./db/.env # Environment variable file
+    volumes:
+      - dbdata:/var/lib/mysql # Persist data even if container shuts down
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+# Named volume for persisting database data
+volumes:
+  dbdata:
