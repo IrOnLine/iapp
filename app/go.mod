@@ -1,4 +1,4 @@
-module main
+module iapp
 
 go 1.20
 
