@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ironline/iapp/app/routes"
+	"routes"
 
 	"github.com/gorilla/mux"
 )

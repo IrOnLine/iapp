@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/ironline/iapp/app/models"
+	"models"
 
 	"github.com/gorilla/mux"
 )

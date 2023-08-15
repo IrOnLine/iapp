@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/ironline/iapp/app/controllers"
+	"controllers"
 
 	"github.com/gorilla/mux"
 )

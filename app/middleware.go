@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/ironline/iapp/app/config"
+	"config"
 
 	"github.com/golang-jwt/jwt"
 )
